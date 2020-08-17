@@ -384,7 +384,7 @@
         this.url = options.url || ''
         this._initBody(bodyInit)
 
-        const response = this;
+        const response = this
 
         this.body = new ReadableStream({
             pull(controller) {
