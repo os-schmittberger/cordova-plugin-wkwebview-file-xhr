@@ -384,9 +384,11 @@
         this.url = options.url || ''
         this._initBody(bodyInit)
 
+        const response = this;
+
         this.body = new ReadableStream({
             pull(controller) {
-                return this.arrayBuffer().then(
+                return response.arrayBuffer().then(
                     (ab) => {
                         controller.enqueue(new Uint8Array(ab))
                         controller.close()
