@@ -2,6 +2,6 @@
 
 (function ()
 {
-  var _fetch = window.fetch;
-  window.fetch = undefined;
+  // var _fetch = window.fetch;
+  // window.fetch = undefined;
 })();
