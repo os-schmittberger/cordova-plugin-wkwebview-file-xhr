@@ -28,6 +28,5 @@
     "jshint": "^2.6.0"
   },
   "dependencies": {
-    "@stardazed/streams-fetch-adapter": "^3.0.0"
   }
 }
