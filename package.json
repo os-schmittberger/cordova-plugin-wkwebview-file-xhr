@@ -26,7 +26,5 @@
   "license": "UPL-1.0",
   "devDependencies": {
     "jshint": "^2.6.0"
-  },
-  "dependencies": {
   }
 }
