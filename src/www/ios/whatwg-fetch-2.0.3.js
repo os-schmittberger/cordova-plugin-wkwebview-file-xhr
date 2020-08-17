@@ -392,19 +392,19 @@ import { createAdaptedFetch, createAdaptedResponse } from "@stardazed/streams-fe
         this.url = options.url || "";
         this._initBody(bodyInit);
 
-        this.body = new ReadableStream({
-            pull(controller) {
-                return this.arrayBuffer().then(
-                    (ab) => {
-                        controller.enqueue(new Uint8Array(ab));
-                        controller.close();
-                    },
-                    (error) => {
-                        controller.error(error);
-                    }
-                );
-            }
-        });
+        // this.body = new ReadableStream({
+        //     pull(controller) {
+        //         return this.arrayBuffer().then(
+        //             (ab) => {
+        //                 controller.enqueue(new Uint8Array(ab));
+        //                 controller.close();
+        //             },
+        //             (error) => {
+        //                 controller.error(error);
+        //             }
+        //         );
+        //     }
+        // });
     }
 
     Body.call(Response.prototype);
