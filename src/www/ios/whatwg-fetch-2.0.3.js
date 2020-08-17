@@ -1,7 +1,7 @@
 (function(self) {
   'use strict';
 
-  if (self._fetch) {
+  if (self.fetch) {
     return
   }
 
@@ -416,7 +416,7 @@
   self.Request = Request
   self.Response = Response
 
-  self._fetch = function(input, init) {
+  self.fetch = function(input, init) {
     return new Promise(function(resolve, reject) {
       var request = new Request(input, init)
       var xhr = new XMLHttpRequest()
@@ -457,5 +457,5 @@
       xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit)
     })
   }
-  self._fetch.polyfill = true
+  self.fetch.polyfill = true
 })(typeof self !== 'undefined' ? self : this);
