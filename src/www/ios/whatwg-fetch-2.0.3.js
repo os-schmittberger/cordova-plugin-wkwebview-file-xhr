@@ -383,6 +383,20 @@
         this.headers = new Headers(options.headers)
         this.url = options.url || ''
         this._initBody(bodyInit)
+
+        this.body = new ReadableStream({
+            pull(controller) {
+                return this.arrayBuffer().then(
+                    (ab) => {
+                        controller.enqueue(new Uint8Array(ab))
+                        controller.close()
+                    },
+                    (error) => {
+                        controller.error(error)
+                    }
+                )
+            }
+        })
     }
 
     Body.call(Response.prototype)
